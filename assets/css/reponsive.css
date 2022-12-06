@@ -1,0 +1,20 @@
+/* (1366x768) WXGA Display */
+@media  screen and (max-width: 1366px) {
+    .app-wrapper {
+        width: 1200px;
+        height: 600px;
+    }
+    .logo {
+        width: 60px;
+    }
+    .heading {
+        font-size: 20px;
+    }
+    .app-header {
+        height: 46px;
+    }
+    input {
+        font-size: 20px;
+    }
+}
+ 

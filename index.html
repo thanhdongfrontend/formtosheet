@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post data</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="app-wrapper">
+            <header class="app-header">
+                <nav class="header-nav">
+                    <button class="btn btn-lock" id="lock-weight">Khóa khối lượng</button>
+                    <button class="btn btn-lock" id="lock-cod">Khóa số tiền COD</button>
+                    <button class="btn btn-lock" id="lock-product">Khóa nội dung hàng</button>
+                    <button class="btn btn-lock" id="lock-barcode">Khóa số hiệu bưu gửi</button>
+                </nav>
+            </header>
+            <div class="app-content">
+                <div class="app-subheader">
+                    <img src="./assets/img/logo-vnpost-1c-inkythuatso.png" alt="logo" class="logo">
+                    <h3 class="heading animate-charcter">Bưu điện văn hóa xã Mỹ Sơn</h3>
+                </div>
+                <form class="info-form" name="submit-to-google-sheet" autocomplete="off">
+                    <input class="input" type="text" name="name" id="name" placeholder="Tên người nhận" required>
+                    <input class="input" type="tel" name="phone" id="phone" placeholder="Số điện thoại" required>
+                    <input class="input" type="text" name="village" id="village" placeholder="Số nhà,đường,xóm,thôn">
+                    <div class="ward-wrapper">
+                        <input class="input" type="text" name="ward" id="ward"
+                            placeholder="Xã/Phường/Thị trấn , Huyện/Quận, Tỉnh/Thành phố">
+                        <ul class="list" id="list"></ul>
+                    </div>
+                    <input class="input" type="text" name="address" id="address" placeholder="Địa chỉ chi tiết" readonly="true"
+                        tabindex="-1" required>
+                    <input class="input" type="text" name="cod" id="cod" placeholder="Số tiền COD" required>
+                    <input class="input" type="text" name="weight" id="weight" placeholder="Khối lượng(gr)" required>
+                    <input class="input" type="text" name="product" id="product" placeholder="Nội dung hàng" required>
+                    <input class="input" type="text" name="barcode" id="barcode" placeholder="Số hiệu bưu gửi" required>
+                    <button class="btn btn-submit" type="submit">Nhập vào</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.6.1.min.js"></script>
+    <script src="./assets/js/address.js"></script>
+    <script src="./assets/js/suggestion.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/post.js"></script>
+</body>
+
+</html>
