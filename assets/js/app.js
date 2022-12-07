@@ -8,6 +8,7 @@ const lockproduct = document.getElementById("lock-product");
 var product = document.getElementById("product");
 const lockbarcode = document.getElementById("lock-barcode");
 var barcode = document.getElementById("barcode");
+var qrcodeScan = document.getElementById("qrcode-scaner");
 lockWeight.addEventListener("click", function () {
   if (lockWeight.textContent == "Khóa khối lượng") {
     weight.setAttribute("readonly", true);
@@ -60,7 +61,41 @@ lockbarcode.addEventListener("click", function () {
     barcode.removeAttribute("readonly");
     lockbarcode.textContent = "Khóa số hiệu bưu gửi";
     barcode.removeAttribute("tabIndex");
-    barcode.setAttribute('required',true)
+    barcode.setAttribute("required", true);
     lockbarcode.classList.remove("lock");
   }
+});
+
+function onScanSuccess(qrCodeMessage) {
+  barcode.value = qrCodeMessage;
+  document.getElementById("stop-scan").click();
+  html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+    fps: 60,
+    qrbox: 250,
+  });
+  html5QrcodeScanner.render(onScanSuccess, onScanError);
+  qrcodeScan.classList.add("hide");
+}
+
+function onScanError(errorMessage) {
+  //handle scan error
+}
+
+var html5QrcodeScanner;
+
+var btnScan = document.getElementById("btn-scan");
+
+btnScan.addEventListener("click", function () {
+  html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+    fps: 60,
+    qrbox: 250,
+  });
+  html5QrcodeScanner.render(onScanSuccess, onScanError);
+  qrcodeScan.classList.add("show");
+  qrcodeScan.classList.remove("hide");
+  document.getElementById("permissions").click();
+  var interval = setInterval(function () {
+    document.getElementById("start-scan").click();
+    clearInterval(interval);
+  }, 1000);
 });

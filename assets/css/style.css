@@ -179,3 +179,36 @@ input {
   color: #000;
   font-weight: bold;
 }
+
+
+.qrcode-scan {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.hide {
+  display: none !important;
+}
+
+.barcode {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.barcode-result {
+  margin-bottom: 0px;
+}
+
+.btn-scan {
+  width: 120px;
+  padding: 2px 6px;
+  margin-left: 16px;
+}
+
+.show {
+  display: block;
+}

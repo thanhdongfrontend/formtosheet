@@ -40,12 +40,19 @@
                     <input class="input" type="text" name="cod" id="cod" placeholder="Số tiền COD" required>
                     <input class="input" type="text" name="weight" id="weight" placeholder="Khối lượng(gr)" required>
                     <input class="input" type="text" name="product" id="product" placeholder="Nội dung hàng" required>
-                    <input class="input" type="text" name="barcode" id="barcode" placeholder="Số hiệu bưu gửi" required>
+                    <div class="barcode" >
+                        <input class="input barcode-result" type="text" name="barcode" id="barcode" placeholder="Số hiệu bưu gửi" required>
+                        <button type="button" class="btn btn-scan" id="btn-scan">Quét mã</button>
+                    </div>
                     <button class="btn btn-submit" type="submit">Nhập vào</button>
                 </form>
+                <div class="qrcode-scan" id="qrcode-scaner">
+                    <div id="reader"></div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="./assets/js/html5-qrcode.min.js"></script>
     <script src="./assets/js/jquery-3.6.1.min.js"></script>
     <script src="./assets/js/address.js"></script>
     <script src="./assets/js/suggestion.js"></script>
