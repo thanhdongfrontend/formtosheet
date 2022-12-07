@@ -204,6 +204,7 @@ input {
 }
 
 .btn-scan {
+  display: none;
   width: 120px;
   padding: 2px 6px;
   margin-left: 16px;

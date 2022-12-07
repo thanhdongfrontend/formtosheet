@@ -82,12 +82,8 @@ var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
 });
 html5QrcodeScanner.render(onScanSuccess, onScanError);
 document.getElementById("permissions").click();
-
-
 var btnScan = document.getElementById("btn-scan");
-
 btnScan.addEventListener("click", function () {
- 
   qrcodeScan.classList.add("show");
   qrcodeScan.classList.remove("hide");
   var interval = setInterval(function () {
