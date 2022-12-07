@@ -69,11 +69,6 @@ lockbarcode.addEventListener("click", function () {
 function onScanSuccess(qrCodeMessage) {
   barcode.value = qrCodeMessage;
   document.getElementById("stop-scan").click();
-  html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-    fps: 60,
-    qrbox: 250,
-  });
-  html5QrcodeScanner.render(onScanSuccess, onScanError);
   qrcodeScan.classList.add("hide");
 }
 
@@ -81,19 +76,20 @@ function onScanError(errorMessage) {
   //handle scan error
 }
 
-var html5QrcodeScanner;
+var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+  fps: 60,
+  qrbox: 250,
+});
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+document.getElementById("permissions").click();
+
 
 var btnScan = document.getElementById("btn-scan");
 
 btnScan.addEventListener("click", function () {
-  html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-    fps: 60,
-    qrbox: 250,
-  });
-  html5QrcodeScanner.render(onScanSuccess, onScanError);
+ 
   qrcodeScan.classList.add("show");
   qrcodeScan.classList.remove("hide");
-  document.getElementById("permissions").click();
   var interval = setInterval(function () {
     document.getElementById("start-scan").click();
     clearInterval(interval);
