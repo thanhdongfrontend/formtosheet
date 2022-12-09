@@ -1,9 +1,9 @@
-var form = document.querySelector("form");
+var form = document.querySelector("form")
 var receiverName = document.getElementById('name')
 var phone = document.getElementById('phone')
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let data = new FormData(form);
+  e.preventDefault()
+  let data = new FormData(form)
   fetch(
     "https://script.google.com/macros/s/AKfycbyQdJzZTlRSiR5qLtLdh4VhgufPC6tMvWClX2Y1Po7ClRNkP7px5_hyMahStvoPemSViw/exec",
     {
@@ -12,37 +12,37 @@ form.addEventListener("submit", (e) => {
     }
   )
     .then((res) => res.text())
-    .then((data) => {});
-  resetForm();
-});
+    .then((data) => {})
+  resetForm()
+})
 
 function resetForm() {
     if ( $('#weight').is('[readonly]') ) { 
-        weight.value = $('#weight').val();
+        weight.value = $('#weight').val()
     }
     else {
-        weight.value = '';
+        weight.value = ''
     }
 
     if ( $('#cod').is('[readonly]') ) { 
-        cod.value = $('#cod').val();
+        cod.value = $('#cod').val()
     }
     else {
-        cod.value = '';
+        cod.value = ''
     }
 
     if ( $('#product').is('[readonly]') ) { 
-        product.value = $('#product').val();
+        product.value = $('#product').val()
     }
     else {
-        product.value = '';
+        product.value = ''
     }
 
     if ( $('#barcode').is('[readonly]') ) { 
-        barcode.value = $('#barcode').val();
+        barcode.value = $('#barcode').val()
     }
     else {
-        barcode.value = '';
+        barcode.value = ''
     }
 
     receiverName.value = ""
