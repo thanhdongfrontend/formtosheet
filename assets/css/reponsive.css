@@ -20,7 +20,7 @@
 /* Mobile */
 @media (max-width: 739px) {
   .app-content {
-  height: calc(100% - 70px);
+  height: calc(100% - 56px);
   }
 
   .btn {
@@ -34,7 +34,6 @@
 
   .header-nav {
     padding: 0;
-    position: fixed;
     height: 52px;
   }
 
